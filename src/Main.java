@@ -13,6 +13,8 @@ public class Main {
         inventory.addItem(dellMouse, 12);
         inventory.addItem(samsungScreen, 5);
 
+        inventory.removeItem(dellMouse, 16);
+
         inventory.displayInventoryOnConsole();
     }
 }
