@@ -1,4 +1,5 @@
 import inventoryManager.Brand;
+import inventoryManager.Inventory;
 import inventoryManager.Mouse;
 import inventoryManager.Screen;
 
@@ -7,7 +8,11 @@ public class Main {
         Mouse dellMouse = new Mouse(Brand.DELL, 20.0);
         Screen samsungScreen = new Screen(Brand.SAMSUNG, 150.0, "1920x1080");
 
-        System.out.println(samsungScreen);
-        System.out.println(dellMouse);
+        Inventory inventory = new Inventory();
+
+        inventory.addItem(dellMouse, 12);
+        inventory.addItem(samsungScreen, 5);
+
+        inventory.displayInventoryOnConsole();
     }
 }
