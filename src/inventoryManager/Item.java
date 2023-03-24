@@ -8,4 +8,9 @@ public abstract class Item {
         this.brand = brand;
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Brand : " + this.brand + " / Price : " + this.price;
+    }
 }
