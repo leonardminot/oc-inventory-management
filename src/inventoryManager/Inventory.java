@@ -16,25 +16,24 @@ public class Inventory {
 
     public void removeItem(Item itemToRemove, int quantityToRemove) {
         int remainingStock = this.store.get(itemToRemove);
+        int quantityLeft = remainingStock - quantityToRemove;
 
         if (remainingStock - quantityToRemove < 0) {
-            this.store.put(itemToRemove, 0);
-        } else {
-            this.store.put(itemToRemove, remainingStock - quantityToRemove);
+            quantityLeft = 0;
         }
+
+        this.store.put(itemToRemove, quantityLeft);
     }
 
     public void displayInventoryOnConsole() {
-        for (Map.Entry<Item, Integer> itemInStore : store.entrySet()) {
+        for (Map.Entry<Item, Integer> itemInStore : this.store.entrySet()) {
             System.out.println(itemInStore.getKey() + " - In stock : " + itemInStore.getValue());
         }
     }
 
     public void displayItemOnConsole() {
-        for (Map.Entry<Item, Integer> itemInStore : store.entrySet()) {
+        for (Map.Entry<Item, Integer> itemInStore : this.store.entrySet()) {
             System.out.println(itemInStore.getKey());
         }
     }
-
-
 }
