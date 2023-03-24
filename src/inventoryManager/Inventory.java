@@ -15,14 +15,15 @@ public class Inventory {
     }
 
     public void removeItem(Item itemToRemove, int quantityToRemove) {
-        int remainingStock = this.store.get(itemToRemove);
-        int quantityLeft = remainingStock - quantityToRemove;
-
-        if (remainingStock - quantityToRemove < 0) {
-            quantityLeft = 0;
-        }
-
+        int quantityLeft = getQuantityLeft(this.store.get(itemToRemove), quantityToRemove);
         this.store.put(itemToRemove, quantityLeft);
+    }
+
+    private int getQuantityLeft(int quantityInStock, int quantityToRemove) {
+        int quantityLeft = quantityInStock - quantityToRemove;
+        if (quantityLeft < 0) { quantityLeft = 0; }
+
+        return quantityLeft;
     }
 
     public void displayInventoryOnConsole() {
