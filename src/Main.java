@@ -16,5 +16,7 @@ public class Main {
         inventory.removeItem(dellMouse, 16);
 
         inventory.displayInventoryOnConsole();
+
+        inventory.displayItemOnConsole();
     }
 }

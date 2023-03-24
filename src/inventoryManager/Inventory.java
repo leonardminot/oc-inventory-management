@@ -29,4 +29,12 @@ public class Inventory {
             System.out.println(itemInStore.getKey() + " - In stock : " + itemInStore.getValue());
         }
     }
+
+    public void displayItemOnConsole() {
+        for (Map.Entry<Item, Integer> itemInStore : store.entrySet()) {
+            System.out.println(itemInStore.getKey());
+        }
+    }
+
+
 }
